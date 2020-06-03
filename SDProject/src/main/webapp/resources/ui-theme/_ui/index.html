@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./css/vendor.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form class="needs-validation" novalidate>
+                <div class="form-group has-error">
+                    <label class="p-1">First Name</label>
+                    <input type="text" class="form-control js-needs-validation" placeholder="Enter first name" required/>
+                    <div class="invalid-feedback p-0">
+                        Please provide a First Name.
+                    </div>
+                </div>
+
+                <div class="form-group has-error">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control js-needs-validation" placeholder="Enter last name"/>
+                    <div class="invalid-feedback p-0">
+                        Please provide a Last Name.
+                    </div>
+                </div>
+
+
+                <div class="form-group has-error">
+                    <label>Email</label>
+                    <input type="email" class="form-control js-needs-validation" placeholder="Enter email"/>
+                    <div class="invalid-feedback p-0">
+                        Please provide an E-mail.
+                    </div>
+                </div>
+
+
+                <div class="form-group has-error">
+                    <label>Birthday</label>
+                    <div class="container">
+                        <div class="row select-group">
+                            <div class="form-group has-error col-lg-3 p-0">
+                                <select data-min="1" data-max="32" data-placeholder="Day"
+                                        class="form-control js-needs-validation"></select>
+                                <div class="invalid-feedback small">
+                                    Please provide a valid day.
+                                </div>
+                            </div>
+                            <div class="col-sm"></div>
+                            <div class="form-group has-error col-lg-3 p-0">
+                                <select data-min="1" data-max="13" data-placeholder="Month"
+                                        class="form-control js-needs-validation"></select>
+                                <div class="invalid-feedback small">
+                                    Please provide a valid month.
+                                </div>
+                            </div>
+                            <div class="col-sm"></div>
+                            <div class="form-group has-error col-lg-3 p-0">
+                                <select data-min="1950" data-max="2021" data-placeholder="Year"
+                                        class="form-control js-needs-validation"></select>
+                                <div class="invalid-feedback small">
+                                    Please provide a valid year.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./js/vendor.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

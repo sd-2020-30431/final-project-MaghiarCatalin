@@ -1,0 +1,10 @@
+.list-group-item:hover {
+  background-color: #eafdff; }
+
+tbody tr:hover {
+  background-color: #eafdff; }
+
+.removeCat {
+  cursor: pointer; }
+
+/*# sourceMappingURL=main.css.map */

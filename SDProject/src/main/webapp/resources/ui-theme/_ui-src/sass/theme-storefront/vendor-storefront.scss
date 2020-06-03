@@ -1,0 +1,13 @@
+@import '../theme-storefront/_variables-storefront';
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+//Adapt the path to be relative to your main.scss file
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+
+//Include at least one of the below, depending on what icons you want.
+//Adapt the path to be relative to your main.scss file
+@import "node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "node_modules/@fortawesome/fontawesome-free/scss/solid";
+
+@import "node_modules/@fortawesome/fontawesome-free/scss/v4-shims";

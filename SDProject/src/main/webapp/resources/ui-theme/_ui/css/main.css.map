@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"../../_ui-src/sass/theme-backoffice/main.scss",
+		"../../_ui-src/sass/utilities/product-hover.scss",
+		"../../_ui-src/sass/utilities/tr-hover.scss",
+		"../../_ui-src/sass/utilities/span-cursor.scss"
+	],
+	"names": [],
+	"mappings": "ACAA,AACE,gBADc,AACb,MAAM,CAAA;EACL,gBAAgB,EAAE,OAAO,GAC1B;;ACHH,AAEI,KAFC,CACH,EAAE,AACC,MAAM,CAAA;EACL,gBAAgB,EAAE,OAAO,GAC1B;;ACJL,AAAA,UAAU,CAAA;EACR,MAAM,EAAE,OAAO,GAChB"
+}

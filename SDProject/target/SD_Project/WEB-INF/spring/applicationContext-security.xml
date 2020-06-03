@@ -1,0 +1,63 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
+
+    <!-- https://docs.spring.io/spring-security/site/docs/5.2.2.RELEASE/reference/html5/#ns-minimal -->
+    <global-method-security secured-annotations="enabled"/>
+
+
+    <http pattern="/users/login" auto-config="true">
+        <custom-filter ref="loginPageFilter" position="PRE_AUTH_FILTER"/>
+    </http>
+
+    <http>
+        <!--Aici introduc securitatea pentru pagini-->
+        <intercept-url pattern="/users/insert-admin" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/users/update" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/users/delete" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/users/update-account" method="GET" access="isAuthenticated()"/>
+        <intercept-url pattern="/users" method="GET" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/users/sign-up" access="permitAll()"/>
+        <intercept-url pattern="/users" method="POST" access="permitAll()"/>
+        <intercept-url pattern="/users/delete-my-account" access="isAuthenticated()"/>
+        <intercept-url pattern="/users" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/destinations" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/destinations/add-destination" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/destinations/update" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/destinations/{id}" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/products/delete/*" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/products/update" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/products/add" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/products" access="hasAuthority('ADMIN')"/>
+        <intercept-url pattern="/orders" access="isAuthenticated()"/>
+        <form-login login-page="/users/login"
+                    authentication-success-handler-ref="authenticationSuccessHandler"
+                    login-processing-url="/login"
+                    username-parameter="email"
+                    password-parameter="password"
+                    authentication-failure-url="/users/login?error=Invalid+username+or+password"/>
+        <logout logout-url="/logout"
+                success-handler-ref="logoutRequestSuccessHandler"/>
+        <csrf disabled="true"/>
+        <session-management session-authentication-strategy-ref="sessionAuthenticationStrategy"/>
+    </http>
+
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="userServiceImpl">
+            <password-encoder ref="passwordEncoder"/>
+        </authentication-provider>
+    </authentication-manager>
+
+    <beans:bean name="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+    <beans:bean id="sessionAuthenticationStrategy"
+                class="org.springframework.security.web.authentication.session.ConcurrentSessionControlAuthenticationStrategy">
+        <beans:constructor-arg name="sessionRegistry" ref="sessionRegistry"/>
+        <beans:property name="maximumSessions" value="1"/>
+    </beans:bean>
+
+    <beans:bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl"/>
+
+</beans:beans>

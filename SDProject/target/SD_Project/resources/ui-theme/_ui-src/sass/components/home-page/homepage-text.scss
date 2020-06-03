@@ -1,0 +1,88 @@
+.text-title {
+  color: black;
+  font-family: Lato, sans-serif;
+  font-size: 24pt;
+}
+
+.text-nav {
+  color: black;
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.text-minicart {
+  span{
+    color: white;
+  }
+  div{
+    color: white;
+  }
+}
+
+.text-minicart-hover{
+  a{
+    color: white;
+    text-decoration: none;
+  }
+  a:hover{
+    color: yellow;
+  }
+}
+
+.text-title-white {
+  color: white;
+  font-family: Lato, sans-serif;
+  font-size: 18pt
+}
+
+.text-gray-footer {
+  color: #b3b3b3;
+  font-family: Lato, sans-serif;
+  font-size: 14pt;
+}
+
+.text-gray {
+  font-family: Lato, sans-serif;
+  font-size: 18pt;
+  color: #666666;
+}
+
+.text-confirmation {
+  font-family: Lato, sans-serif;
+  font-size: 18pt;
+  color: black;
+}
+
+.text-gray-sm {
+  font-family: Lato, sans-serif;
+  font-size: 11pt;
+  color: #666666;
+}
+
+.text-yellow {
+  font-family: Lato, sans-serif;
+  font-size: 18pt;
+  color: #ff9600;
+}
+
+.timer-text {
+  width: 80px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #767676;
+}
+
+.prod-text{
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+
+.pg-text{
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
